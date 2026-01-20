@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush Nandwana | Portfolio</title>
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#e8ecff;
+      --muted:#aab3d6;
+      --accent:#4f8cff;
+      --accent2:#21d4fd;
+      --border:rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #101a3a 0%, var(--bg) 55%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:24px;
+    }
+
+    /* HERO */
+    .hero{
+      padding:30px 0 10px;
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap:18px;
+      align-items:center;
+    }
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr;}
+    }
+    .hero-card{
+      background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(33,212,253,0.12));
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .hero h1{
+      margin:0 0 6px;
+      font-size:34px;
+      letter-spacing:0.3px;
+    }
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .badges{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .badge{
+      font-size:13px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(18,26,51,0.55);
+      color: var(--text);
+    }
+    .cta{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(18,26,51,0.65);
+      color:var(--text);
+      font-weight:600;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#061027;
+      border:none;
+    }
+    .btn:hover{transform: translateY(-1px); transition:0.2s;}
+
+    .mini-card{
+      background: rgba(18,26,51,0.65);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+    }
+    .mini-title{
+      margin:0 0 8px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .stat{
+      font-size:26px;
+      font-weight:800;
+      margin:0;
+    }
+    .stat-sub{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* SECTION */
+    .section{
+      margin-top:18px;
+      background: rgba(18,26,51,0.55);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:0.2px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+    }
+    .project{
+      background: rgba(11,16,32,0.45);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+    }
+    .project h3{
+      margin:0 0 6px;
+      font-size:16px;
+    }
+    .project p{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .tag{
+      font-size:12px;
+      padding:5px 9px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(18,26,51,0.6);
+      color:var(--text);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    @media(max-width:850px){
+      .two-col{grid-template-columns:1fr;}
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:18px;
+    }
+
+    .line{
+      height:1px;
+      background: var(--border);
+      margin:14px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-card">
+        <h1>Ayush Nandwana</h1>
+        <p>
+          Software Engineer (2.3 yrs) • Full Stack Java Trained • Transitioning into Data Analytics
+          <br/>
+          <b>SQL • Power BI • Excel</b> | Building dashboards & insights from data
+        </p>
+
+        <div class="badges">
+          <span class="badge">📍 India</span>
+          <span class="badge">✅ Open to Data Analyst Roles</span>
+          <span class="badge">⚡ Immediate Joiner</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="https://drive.google.com/drive/folders/1n6o-uX5IPqpaAy8trWo95CIkLbNJQUcf?usp=sharing" target="_blank">Download Resume</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <p class="mini-title">Quick Highlights</p>
+        <p class="stat">2.3 Years</p>
+        <p class="stat-sub">Experience at HCL as Software Engineer</p>
+        <div class="line"></div>
+        <p class="stat">4 Projects</p>
+        <p class="stat-sub">SQL • Excel • Power BI • Java</p>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p style="color: var(--muted); margin:0;">
+        I am a Software Engineer with 2.3 years of experience at HCL. I have strong fundamentals in programming and
+        problem-solving, and I’m currently focusing on Data Analytics using SQL, Excel, and Power BI.
+        I enjoy building interactive dashboards, finding insights, and solving business problems using data.
+      </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="project">
+          <h3>Data Analytics</h3>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Dashboarding</span>
+          </div>
+          <p>Creating insights using queries, visuals, KPIs, and business analysis.</p>
+        </div>
+
+        <div class="project">
+          <h3>Programming</h3>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">C++</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Problem Solving</span>
+          </div>
+          <p>Strong coding fundamentals and structured development knowledge.</p>
+        </div>
+
+        <div class="project">
+          <h3>Tools</h3>
+          <div class="tags">
+            <span class="tag">GitHub</span>
+            <span class="tag">MS Office</span>
+            <span class="tag">Documentation</span>
+          </div>
+          <p>Comfortable with project documentation and version control basics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+
+        <div class="project">
+          <h3>RCB – IPL Strategy (SQL)</h3>
+          <p>
+            SQL analysis on IPL datasets to identify match patterns, player performance trends,
+            and strategy insights.
+          </p>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Joins</span>
+            <span class="tag">CTE</span>
+            <span class="tag">Window Functions</span>
+          </div>
+          <a class="btn" href="https://github.com/Ayushnandwana/RCB---IPL-Strategy-" target="_blank">View Repository</a>
+        </div>
+
+        <div class="project">
+          <h3>E-commerce Sales Analytics</h3>
+          <p>
+            Analyzed e-commerce sales data to extract key business insights like revenue trends,
+            top-selling products, and category performance.
+          </p>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Business Insights</span>
+            <span class="tag">Trends</span>
+            <span class="tag">Analysis</span>
+          </div>
+          <a class="btn" href="https://github.com/Ayushnandwana/ecommerce-sales-analytics" target="_blank">View Repository</a>
+        </div>
+
+        <div class="project">
+          <h3>Zomato Restaurant Analysis</h3>
+          <p>
+            Analyzed Zomato restaurant data to find trends in cuisines, cost, ratings,
+            and city-wise performance.
+          </p>
+          <div class="tags">
+            <span class="tag">Excel</span>
+            <span class="tag">Pivot Table</span>
+            <span class="tag">Charts</span>
+            <span class="tag">Insights</span>
+          </div>
+          <a class="btn" href="https://github.com/Ayushnandwana/Zomato-Restaurant-Analysis" target="_blank">View Repository</a>
+        </div>
+
+        <div class="project">
+          <h3>E-notes Management Project (Java)</h3>
+          <p>
+            Built a notes management application with features to add, view, update, and delete notes.
+            Demonstrates understanding of CRUD and application workflow.
+          </p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">CRUD</span>
+            <span class="tag">Web App</span>
+            <span class="tag">OOP</span>
+          </div>
+          <a class="btn" href="https://github.com/Ayushnandwana/Enotes_Management_Project" target="_blank">View Repository</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS + ACHIEVEMENTS -->
+    <div class="section">
+      <h2>Certifications & Achievements</h2>
+
+      <div class="two-col">
+        <div class="project">
+          <h3>Certifications</h3>
+          <ul style="margin:0; padding-left:18px; color: var(--muted);">
+            <li><b>C++ Programming – Expert Level</b>, SRM Institute of Science and Technology (Jul 2018 – Oct 2018)</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>Achievements</h3>
+          <ul style="margin:0; padding-left:18px; color: var(--muted);">
+            <li><b>Certificate of Appreciation</b>, SRM University — Social Responsibility Activity (Nov 2017)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p style="margin:0; color: var(--muted);">
+        🔗 LinkedIn: <a href="https://www.linkedin.com/in/ayush-nandwana/" target="_blank">linkedin.com/in/ayush-nandwana</a><br/>
+        💻 GitHub: <a href="https://github.com/Ayushnandwana" target="_blank">github.com/Ayushnandwana</a><br/>
+        📄 Resume: <a href="https://drive.google.com/drive/folders/1n6o-uX5IPqpaAy8trWo95CIkLbNJQUcf?usp=sharing" target="_blank">View / Download</a>
+      </p>
+    </div>
+
+    <footer>
+      © 2026 Ayush Nandwana • Built with GitHub Pages
+    </footer>
+
+  </div>
+</body>
+</html>
